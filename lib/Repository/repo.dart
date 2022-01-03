@@ -12,18 +12,15 @@ class Repository{
       try{
         final response = await HttpService.getDataRequest(url: url);
         final decodedResponse = jsonDecode(response.body);
-        print(response.body);
         if(response.statusCode==200)
         {
-          //BlocProvider.of<DemoBloc>(context).add(event);
           return (decodedResponse as List)
           .map((data) => User.fromJson(data))
-          .toList();//'decodedResponse['responseMessage'];
+          .toList();
         }
-        return [];//decodedResponse['responseMessage'];
+        return [];
       }
       catch(e){
-        print(e);
         return [];
       }
 
@@ -36,12 +33,11 @@ class Repository{
         print(response.body);
         if(response.statusCode==200)
         {
-          //BlocProvider.of<DemoBloc>(context).add(event);
           return (decodedResponse as List)
           .map((data) => Post.fromJson(data))
-          .toList();//'decodedResponse['responseMessage'];
+          .toList();
         }
-        return [];//decodedResponse['responseMessage'];
+        return [];
       }
       catch(e){
         print(e);
