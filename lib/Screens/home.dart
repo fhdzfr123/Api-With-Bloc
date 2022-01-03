@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
               ],
             ),
 
-            floatingActionButton: FloatingActionButton(
+            floatingActionButton: const FloatingActionButton(
               backgroundColor: Color(0xFFE43228),
               onPressed: null,
               child: Icon(Icons.add),
@@ -77,7 +77,7 @@ class _PostsState extends State<Posts> {
   Widget build(BuildContext context) {
     return BlocBuilder<DemoBloc,AppState>(
       builder: (context,data){
-        return data.postsData==null ?  Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFE43228)))) : ListView.separated(
+        return data.postsData==null ?  const Center(child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFE43228)))) : ListView.separated(
       itemBuilder: (context,ind){
         return ListTile(
           title: Text('${data.postsData![ind].title}',style: data.loginuserInfo!.id == data.postsData![ind].userId? TextStyle(color: Color(0xFFE43228),fontWeight: FontWeight.bold):TextStyle()),
@@ -105,29 +105,29 @@ class Profile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:  [
-              Text('Name',style: TextStyle(fontSize:18)),
-              Text('${data.loginuserInfo!.name}',style: TextStyle(fontSize:16,color: Colors.grey)),
+              const Text('Name',style: TextStyle(fontSize:18)),
+              Text('${data.loginuserInfo!.name}',style: const TextStyle(fontSize:16,color: Colors.grey)),
             ],),
             const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              Text('Username',style: TextStyle(fontSize:18)),
-              Text('${data.loginuserInfo!.username}',style: TextStyle(fontSize:16,color: Colors.grey)),
+              const Text('Username',style: TextStyle(fontSize:18)),
+              Text('${data.loginuserInfo!.username}',style: const TextStyle(fontSize:16,color: Colors.grey)),
             ],),
             const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-              Text('Address',style: TextStyle(fontSize:18)),
-              Text('${data.loginuserInfo!.address!.street},${data.loginuserInfo!.address!.suite}\n${data.loginuserInfo!.address!.city}',style: TextStyle(fontSize:16,color: Colors.grey)),
+              const Text('Address',style: TextStyle(fontSize:18)),
+              Text('${data.loginuserInfo!.address!.street},${data.loginuserInfo!.address!.suite}\n${data.loginuserInfo!.address!.city}',style: const TextStyle(fontSize:16,color: Colors.grey)),
             ],),
             const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-              Text('Zipcode',style: TextStyle(fontSize:18)),
-              Text('${data.loginuserInfo!.address!.zipcode}',style: TextStyle(fontSize:16,color: Colors.grey)),
+              const Text('Zipcode',style: TextStyle(fontSize:18)),
+              Text('${data.loginuserInfo!.address!.zipcode}',style: const TextStyle(fontSize:16,color: Colors.grey)),
             ],),
             const Divider(),
         ],
